@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="POST" id="customerForm">
+        {% csrf_token %}
+        <input type="text" placeholder="title" name="title">
+        <input type="text" placeholder="First Name" name="firstname">
+        <input type="text" placeholder="Surname" name="surname">
+        <input type="date" name="d_o_b" required>
+        <span id="age-error"></span>
+        <input type="text" placeholder="Address" name="address">
+        <input type="tel" placeholder="Telephone No." pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="telephone">
+        <input type="text" placeholder="Bidding Settings" name="bd-settings">
+        <span id="bd-error"></span>
+        <input type="number" placeholder="Google Ads Account ID"  name="google_id">
+
+        <input type="submit" value="Submit">
+
+    </form>
+    
+     <script src="{% static 'formapp/js/index.js' %}"></script>
+</body>
+</html>
