@@ -17,6 +17,7 @@ def index(request):
         application =  UserApplication(title=title,first_name=first_name,surname=surname,d_o_b=d_o_b,company_name=company_name,address=address,telephone=telephone,bidding_settings=bd_settings,google_id=google_id)
         
         application.save()
+        return redirect("applications")
     
     return render(request, "formapp/customerSubmitForm.html")
 
