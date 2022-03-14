@@ -6,10 +6,11 @@
     <link rel="stylesheet" href="{% static 'formapp/css/form.css' %}">
 {% endblock  %}
 {% block content %}
-    <form  action="" method="POST" id="customerForm">
+    <form class="shadow-lg"  action="" method="POST" id="customerForm">
         {% csrf_token %}
+        <h1>ACCOUNTS FORM</h1>
         <div class="form-group">   
-            <input type="text" class="form-control" placeholder="title" name="title">
+            <input type="text" class="form-control" placeholder="Title" name="title">
         </div>
         <div class="row">
             <div class="col">
@@ -21,8 +22,11 @@
         </div>
         
         <div class="form-group">
-            <input type="date" class="form-control" name="d_o_b" required>
-            <span id="age-error"></span>
+            <input type="text" class="form-control" placeholder="Date of Birth" onfocus="(this.type='date')" name="d_o_b" required>
+            <span class="error" id="age-error"></span>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Company Name" name="company_name">
         </div>
         <div class="form-group">
             <input type="text" class="form-control" placeholder="Address" name="address">
@@ -34,10 +38,10 @@
        <div class="row">
             <div class="col form-group">
                 <input type="text" class="form-control" placeholder="Bidding Settings" name="bd-settings">
-                <span id="bd-error"></span>
+                <span class="error" id="bd-error"></span>
             </div>
             <div class="col">
-                <input type="number" class="form-control" placeholder="Google Ads Account ID"  name="google_id" required>
+                <input type="text" pattern="\d*"class="form-control" placeholder="Google Ads Account ID"  name="google_id" maxlength="8" minlength="8" required>
              </div>
         </div>
         
@@ -48,4 +52,7 @@
     </form>
 
 {% endblock  %}
-    
+
+{% block script %}
+    <script src="{% static 'formapp/js/index.js' %}"></script>
+{% endblock  %}

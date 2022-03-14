@@ -4,11 +4,22 @@ body {
     padding: 0;
 }
 
+body>div {
+    padding: 0px 20%;
+}
+
 form {
-    padding-top: 70px;
+    padding: 30px 40px;
     display: block;
-    margin: 0 auto;
-    width: 40%;
+    margin: 20px auto;
+    border: 2px solid transparent;
+    border-radius: 30px;
+}
+
+form h1 {
+    text-align: center;
+    font-size: 30px;
+    color: #b3cbe9
 }
 
 form input {
@@ -30,4 +41,13 @@ form input {
 [type="submit"]:hover {
     background-color: white;
     color: #3489EF;
+}
+
+.error {
+    position: relative;
+    top: 5px;
+    font-weight: 600;
+    font-style: italic;
+    color: red;
+    font-size: 15px;
 }

@@ -5,15 +5,20 @@ form.addEventListener("submit", (e) => {
 
     let d_o_b = form.elements['d_o_b'].value
     let biddingSettings = form.elements['bd-settings'].value
+    let ageError = document.querySelector("#age-error")
+    let biddingError = document.querySelector("#bd-error")
+
+    // This ensures any previous error message is cleared
+    ageError.innerHTML = ""
+    biddingError.innerHTML = ""
 
     if (new Date().getFullYear() - d_o_b.split("-")[0] < 18) {
-        let error = document.querySelector("#age-error")
-        error.innerHTML = "Must be above 18"
+        ageError.innerHTML = "Must be 18 or above"
         e.preventDefault()
     }
     if (!AllBiddingSettings.includes(biddingSettings.toUpperCase())) {
-        let error = document.querySelector("#bd-error")
-        error.innerHTML = "Invalid bidding settings"
+
+        biddingError.innerHTML = "Invalid bidding settings"
         e.preventDefault()
     }
 

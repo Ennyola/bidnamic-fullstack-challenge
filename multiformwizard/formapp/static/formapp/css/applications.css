@@ -1,0 +1,57 @@
+body {
+    background-color: #3489EF;
+}
+
+body>div {
+    margin-top: 30px;
+}
+
+h2 {
+    color: aliceblue;
+    text-align: center;
+}
+
+.applications {
+    margin-top: 40px;
+    height: 90vh;
+    overflow: scroll;
+}
+
+tr,
+th {
+    background-color: #eee;
+    border-bottom: 5px solid white;
+}
+
+th {
+    text-align: center;
+    padding: 10px;
+}
+
+td {
+    border: 3px solid white;
+    width: 400px;
+    padding: 20px;
+}
+
+
+/* .single-application {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 30px;
+    border-bottom: 1px solid rgb(177, 169, 169);
+    color: white;
+} */
+
+a {
+    color: red;
+    padding: 5px 10px;
+    border-radius: 45px;
+    transition: 0.5s all;
+}
+
+a:hover {
+    color: red;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 45px;
+}
