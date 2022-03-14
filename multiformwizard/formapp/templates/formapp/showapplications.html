@@ -1,0 +1,12 @@
+{% extends './base.html' %}
+
+{% block content %}
+
+    {% for application in applications  %}
+    <div>
+        {{application.telephone}}
+        <h4>{{application.title}}</h4> 
+        <a href={% url 'delete' application.id%}><i class="fas fa-trash-alt"></i></a>
+    </div>
+    {% endfor %}
+{% endblock  %}

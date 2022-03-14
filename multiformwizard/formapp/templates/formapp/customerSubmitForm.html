@@ -1,13 +1,10 @@
-<!DOCTYPE html>
 {% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% extends "./base.html" %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="{% static 'css/form.css' %}">
+{% endblock  %}
+{% block content %}
     <form action="" method="POST" id="customerForm">
         {% csrf_token %}
         <input type="text" placeholder="title" name="title">
@@ -19,12 +16,11 @@
         <input type="tel" placeholder="Telephone No." pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="telephone">
         <input type="text" placeholder="Bidding Settings" name="bd-settings">
         <span id="bd-error"></span>
-        <input type="number" placeholder="Google Ads Account ID"  name="google_id">
+        <input type="number" placeholder="Google Ads Account ID"  name="google_id" required>
 
         <input type="submit" value="Submit">
 
     </form>
+
+{% endblock  %}
     
-     <script src="{% static 'formapp/js/index.js' %}"></script>
-</body>
-</html>
