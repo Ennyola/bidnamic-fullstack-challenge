@@ -1,24 +1,49 @@
-{% load static %}
 {% extends "./base.html" %}
+{% load static %}
+
 
 {% block stylesheet %}
-    <link rel="stylesheet" href="{% static 'css/form.css' %}">
+    <link rel="stylesheet" href="{% static 'formapp/css/form.css' %}">
 {% endblock  %}
 {% block content %}
-    <form action="" method="POST" id="customerForm">
+    <form  action="" method="POST" id="customerForm">
         {% csrf_token %}
-        <input type="text" placeholder="title" name="title">
-        <input type="text" placeholder="First Name" name="firstname">
-        <input type="text" placeholder="Surname" name="surname">
-        <input type="date" name="d_o_b" required>
-        <span id="age-error"></span>
-        <input type="text" placeholder="Address" name="address">
-        <input type="tel" placeholder="Telephone No." pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="telephone">
-        <input type="text" placeholder="Bidding Settings" name="bd-settings">
-        <span id="bd-error"></span>
-        <input type="number" placeholder="Google Ads Account ID"  name="google_id" required>
+        <div class="form-group">   
+            <input type="text" class="form-control" placeholder="title" name="title">
+        </div>
+        <div class="row">
+            <div class="col">
+                <input type="text" class="form-control" placeholder="First Name" name="firstname">
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" placeholder="Surname" name="surname">
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <input type="date" class="form-control" name="d_o_b" required>
+            <span id="age-error"></span>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Address" name="address">
+        </div>
+        <div class="form-group">
+            <input type="tel" class="form-control" placeholder="Telephone No." pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="telephone">
+       </div>
 
-        <input type="submit" value="Submit">
+       <div class="row">
+            <div class="col form-group">
+                <input type="text" class="form-control" placeholder="Bidding Settings" name="bd-settings">
+                <span id="bd-error"></span>
+            </div>
+            <div class="col">
+                <input type="number" class="form-control" placeholder="Google Ads Account ID"  name="google_id" required>
+             </div>
+        </div>
+        
+
+
+        <input type="submit" class="shadow" value="submit">
 
     </form>
 

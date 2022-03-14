@@ -1,0 +1,33 @@
+body {
+    background-color: #3489EF;
+    margin: 0;
+    padding: 0;
+}
+
+form {
+    padding-top: 70px;
+    display: block;
+    margin: 0 auto;
+    width: 40%;
+}
+
+form input {
+    margin-top: 40px;
+    padding: 10px 20px !important;
+}
+
+[type="submit"] {
+    display: block;
+    margin: 40px auto;
+    background-color: #3489EF;
+    color: white;
+    border-radius: 30px;
+    outline: none;
+    border: none;
+    transition: 1s all;
+}
+
+[type="submit"]:hover {
+    background-color: white;
+    color: #3489EF;
+}
