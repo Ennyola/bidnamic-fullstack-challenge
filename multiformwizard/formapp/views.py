@@ -1,4 +1,3 @@
-from email.mime import application
 from django.shortcuts import redirect, render
 from .models import UserApplication
 # Create your views here.

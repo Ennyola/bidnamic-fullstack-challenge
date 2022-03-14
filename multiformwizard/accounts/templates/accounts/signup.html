@@ -1,0 +1,11 @@
+<h1>Signup</h1>
+<form action="{% url 'accounts:signup' %}" method="POST">
+    {% csrf_token %}
+    <input type="text"  placeholder="Username" name="username">
+    <input type="password" placeholder="Password"  name="password">
+    <input type="password" placeholder="Retype Password" name="rtpassword">
+    <input type="submit">
+    {% for message in messages  %}
+        {{message}}
+    {% endfor %}
+</form>
