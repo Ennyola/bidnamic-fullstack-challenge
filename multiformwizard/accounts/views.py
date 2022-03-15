@@ -1,19 +1,20 @@
-from telnetlib import STATUS
 from django.shortcuts import render
 from django.contrib.auth import authenticate,login,logout
 from django.shortcuts import redirect
 from django.contrib import messages
 from django.contrib.auth.models import User
-from django.http import HttpResponse
 # Create your views here.
 
 def login_view(request):
     if request.method=="POST":
         username = request.POST.get("username",None)
         password = request.POST.get("password",None)
+        redirect_next = request.POST.get("next",None)
         user = authenticate(username=username, password=password)
         if user is not None:
             login(request, user)
+            if redirect_next is not None:
+                return redirect(redirect_next)
             return redirect("index")
         else:
              messages.error(request, "Invalid Username or Password")

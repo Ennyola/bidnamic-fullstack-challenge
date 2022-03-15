@@ -27,6 +27,14 @@ class TestViews(TestCase):
         })
         self.assertEqual(response.status_code, 200)
         
+    def test_login_view_POST_redirect_next_is_true(self):
+        response = self.client.post(reverse("accounts:login"),{
+            "username":"johndoe",
+            "password":"johndoe",
+            "next":"/applications/"
+        })
+        self.assertEqual(response.status_code, 302)
+        
     def test_signup_GET(self):
         response = self.client.get(reverse("accounts:signup"))
         self.assertEqual(response.status_code, 200)

@@ -13,7 +13,7 @@
     <div class="applications">
         {% if  not applications%}
 
-        <h5>NO APPLICATIONS YET</h5>
+        <h5 class="no-application">NO APPLICATION YET</h5>
 
         
         {% else %}
@@ -21,8 +21,8 @@
                 <thead>
                     <tr>
                         <th>Title</th>
-                        <th>Google ID</th>
-                        <th>first Name</th>
+                        <th>Company</th>
+                        <th>Address</th>
                         <th>Last Name</th>
                     </tr>
                 </thead>
@@ -31,11 +31,11 @@
                     {% for application in applications  %}
                         <tr class="single-application">
                             <td>{{application.title}}</td>
-                            <td>{{application.google_id}}</td>
-                            <td>{{application.first_name}}</td>
+                            <td>{{application.company_name}}</td>
+                            <td>{{application.address}}</td>
                             <td>{{application.surname}}</td> 
                             <td>
-                                <a href={% url 'delete_applications' application.id%}>
+                                <a href={% url 'delete_application' application.id%}>
                                     <i class="fas fa-trash-alt"></i>
                                 </a>
                             </td>  

@@ -37,14 +37,18 @@ form .form-group {
     text-align: center;
 }
 
-.register-link-text {
+.register-link-text,
+.login-link-text {
     display: block;
     margin: 0 auto;
     text-align: center;
 }
 
-.register-link-text a {
-    color: green;
+.register-link-text a,
+.login-link-text a {
+    position: relative;
+    left: 5px;
+    color: rgb(8, 10, 122);
     font-weight: bold;
     text-decoration: none;
 }

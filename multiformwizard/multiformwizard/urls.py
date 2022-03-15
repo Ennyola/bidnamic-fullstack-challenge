@@ -6,5 +6,5 @@ urlpatterns = [
     path('accounts/', include("accounts.urls")),
     path('applications/',show_applications,name="applications" ),
     path('', index, name="index"),
-    path('<int:id>/delete/',delete_application,name="delete-application")
+    path('<int:id>/delete/',delete_application,name="delete_application")
 ]

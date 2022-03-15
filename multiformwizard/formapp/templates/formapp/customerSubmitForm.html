@@ -34,16 +34,14 @@
         <div class="form-group">
             <input type="tel" class="form-control" placeholder="Telephone No." pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="telephone">
        </div>
-
-       <div class="row">
-            <div class="col form-group">
-                <input type="text" class="form-control" placeholder="Bidding Settings" name="bd-settings">
-                <span class="error" id="bd-error"></span>
-            </div>
-            <div class="col">
-                <input type="text" pattern="\d*"class="form-control" placeholder="Google Ads Account ID"  name="google_id" maxlength="8" minlength="8" required>
-             </div>
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Bidding Settings (E.G HIGH, LOW, MEDIUM)" name="bd-settings">
+            <span class="error" id="bd-error"></span>
         </div>
+        <div class="form-group">
+            <input type="text" pattern="\d*"class="form-control" placeholder="Google Ads Account ID (E.G 12345678)"  name="google_id" maxlength="8" minlength="8" required>
+        </div>
+        
         
 
 

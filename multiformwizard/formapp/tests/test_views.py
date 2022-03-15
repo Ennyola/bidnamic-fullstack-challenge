@@ -1,17 +1,17 @@
 from datetime import datetime
-from email.mime import application
 import json
 from django.test import TestCase,Client
 from django.urls import reverse
-
-from formapp.views import delete_application
+from django.contrib.auth.models import User
 from ..models import UserApplication
 # Create your tests here.
 
 class TestViews(TestCase):
     def setUp(self):
         self.client=Client()
-    
+        self.user = User.objects.create_user(email="jondoe@mail.com",username="johndoe",password="johndoe")
+        self.client_login = self.client.login(username="johndoe", password="johndoe")
+
     def test_application_GET(self):
         response = self.client.get(reverse("index"))
         self.assertEqual(response.status_code, 200)
@@ -41,7 +41,7 @@ class TestViews(TestCase):
         
     def test_delete_application(self):
         application= UserApplication.objects.create(title="A new application",first_name="John",surname="Doe", d_o_b=datetime.today().date(), company_name="Bidnami", address="London", telephone="+123456789",bidding_settings="HIGH", google_id=12345678)
-        response = self.client.delete(reverse("delete-application", args=['1']), json.dumps({
+        response = self.client.delete(reverse("delete_application", args=['1']), json.dumps({
             'id':1
         }))
         self.assertEqual(response.status_code, 302)

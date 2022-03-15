@@ -1,7 +1,10 @@
 from django.shortcuts import redirect, render
+from django.contrib.auth.decorators import login_required
 from .models import UserApplication
 # Create your views here.
 
+
+@login_required
 def index(request):
     if request.method=="POST":  
         title=request.POST.get("title",None)
@@ -20,6 +23,7 @@ def index(request):
     
     return render(request, "formapp/customerSubmitForm.html")
 
+@login_required
 def show_applications(request):
     applications = UserApplication.objects.all()
     context={
@@ -28,6 +32,7 @@ def show_applications(request):
     
     return render(request, "formapp/showapplications.html",context)
 
+@login_required
 def delete_application(request,id):
     application = UserApplication.objects.get(id=id)
     application.delete()
