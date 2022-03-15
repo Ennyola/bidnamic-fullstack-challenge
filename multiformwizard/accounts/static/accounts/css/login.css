@@ -1,0 +1,50 @@
+body {
+    background-color: #3489EF;
+    color: white;
+    margin: 0;
+}
+
+body>div {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+h1 {
+    padding: 30px;
+    text-align: center;
+}
+
+form {
+    margin-top: 40px;
+}
+
+form .form-group {
+    margin: 20px;
+    width: 400px;
+}
+
+.btn {
+    display: block;
+    margin: 30px auto;
+}
+
+.error {
+    font-weight: 600;
+    font-style: italic;
+    color: rgb(243, 29, 29);
+    font-size: 20px;
+    text-align: center;
+}
+
+.register-link-text {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.register-link-text a {
+    color: green;
+    font-weight: bold;
+    text-decoration: none;
+}

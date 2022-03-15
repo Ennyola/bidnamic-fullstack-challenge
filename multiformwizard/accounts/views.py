@@ -1,3 +1,4 @@
+from telnetlib import STATUS
 from django.shortcuts import render
 from django.contrib.auth import authenticate,login,logout
 from django.shortcuts import redirect
@@ -16,7 +17,6 @@ def login_view(request):
             return redirect("index")
         else:
              messages.error(request, "Invalid Username or Password")
-             return redirect("accounts:login")
     return render(request,"accounts/login.html")
 
 def signup(request):
@@ -27,15 +27,15 @@ def signup(request):
         
         if password != rt_password:
             messages.error(request, "Password do not match")
-            return redirect("accounts:signup")
-        user,created= User.objects.get_or_create(username=username)
-        if created:
-            user.set_password(password)
-            user.save()
-            login(request, user)
-            return redirect("index")
         else:
-            messages.error(request, "User Already Exists")
+            user,created= User.objects.get_or_create(username=username)
+            if created:
+                user.set_password(password)
+                user.save()
+                login(request, user)
+                return redirect("index")
+            else:
+                messages.error(request, "User Already Exists")
     return render(request,"accounts/signup.html")
 
 def logout_view(request):
