@@ -14,15 +14,12 @@ GETTiNG STARTED
 - 2 applications have been created. 1 for authentication called "accounts" and the other called "formapp" which handles all form   related activites
 
 TESTING
-Tests have been written for each application and they can be found in the "tests" folder for each application.
-
-To run the tests for each application, use the command "python manage.py test [appname]" 
-To run the tests for the whole project, use the command "python manage.py test"
-
-A third party Test package called coverage is also pinned alongside other dependencies. Running the "pip install -r requirements.txt" will install it too.
-
-To run tests using coverage, run the command "coverage run manage.py test [appname] -v 2" or "coverage run manage.py test -v 2"
-
+- Tests have been written for each application and they can be found in the "tests" folder for each application.
+- To run the tests for each application, use the command "python manage.py test [appname]" 
+- To run the tests for the whole project, use the command "python manage.py test"
+Using Coverage
+- A third party Test package called coverage is also pinned alongside other dependencies. Running the "pip install -r requirements.txt" will install it too.
+-To run tests using coverage, run the command "coverage run manage.py test [appname] -v 2" or "coverage run manage.py test -v 2"
 
 LINTING AND FORMATTER
 - PYLINT is the linting tool used
