@@ -1,4 +1,3 @@
-#MULTIFORMWIZARD
 A Multipart form application that collects a set of data and adds them to the Database as a single entity
 
 GETTiNG STARTED
