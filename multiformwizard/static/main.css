@@ -1,0 +1,46 @@
+body {
+    background-color: #3489EF;
+    height: 100vh;
+}
+
+body header>nav {
+    background-color: #3d5f8a;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 30px;
+    flex-wrap: wrap;
+}
+
+body header>nav div {
+    margin: 10px
+}
+
+body header>nav div span {
+    margin: 0px 5px;
+}
+
+body header>nav div a {
+    text-decoration: none;
+    color: white;
+    margin: 5px 10px;
+    padding-bottom: 10px;
+    transition: 0.3s all;
+}
+
+body header>nav div a:hover {
+    color: white;
+    border-bottom: 3px solid rebeccapurple;
+}
+
+body header>nav div i {
+    margin-top: 10px
+}
+
+body>div {
+    margin-top: 30px;
+}
+
+.nav-links a:nth-child(2):hover {
+    border-bottom: 3px solid red;
+}

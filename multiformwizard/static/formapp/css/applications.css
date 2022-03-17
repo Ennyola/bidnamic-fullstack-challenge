@@ -1,0 +1,47 @@
+    h2 {
+        color: aliceblue;
+        text-align: center;
+    }
+    
+    .applications {
+        margin-top: 40px;
+        height: 90vh;
+        overflow: auto;
+    }
+    
+    tr,
+    th {
+        background-color: #eee;
+        border-bottom: 5px solid white;
+    }
+    
+    th {
+        text-align: center;
+        padding: 10px;
+    }
+    
+    td {
+        border: 3px solid white;
+        width: 400px;
+        padding: 20px;
+    }
+    
+    body>div a {
+        color: red;
+        padding: 5px 10px;
+        border-radius: 45px;
+        transition: 0.5s all;
+    }
+    
+    body>div a:hover {
+        color: red;
+        background-color: rgba(255, 255, 255, 0.5);
+        border-radius: 45px;
+    }
+    
+    .no-application {
+        text-align: center;
+        margin-top: 50px;
+        color: #1f4675;
+        font-weight: bold;
+    }

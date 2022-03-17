@@ -5,6 +5,12 @@
 {% block stylesheet %}
     <link rel="stylesheet" href="{% static 'formapp/css/form.css' %}">
 {% endblock  %}
+
+{% block nav_link %}
+    <a href= {% url 'applications' %}> Show Application</a>               
+{% endblock  %}
+
+
 {% block content %}
     <form class="shadow-lg"  action=" {% url 'index' %} " method="POST" id="customerForm">
         {% csrf_token %}
@@ -13,14 +19,14 @@
                 <p class="message-error">{{message}}</p>      
         {% endfor %}
         <div class="form-group">   
-            <input type="text" class="form-control" placeholder="Title" name="title">
+            <input type="text" class="form-control" placeholder="Title" name="title" required>
         </div>
         <div class="row">
             <div class="col">
-                <input type="text" class="form-control" placeholder="First Name" name="firstname">
+                <input type="text" class="form-control" placeholder="First Name" name="firstname" required>
             </div>
             <div class="col">
-                <input type="text" class="form-control" placeholder="Surname" name="surname">
+                <input type="text" class="form-control" placeholder="Surname" name="surname" required>
             </div>
         </div>
         
@@ -29,16 +35,16 @@
             <span class="error" id="age-error"></span>
         </div>
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="Company Name" name="company_name">
+            <input type="text" class="form-control" placeholder="Company Name" name="company_name" required>
         </div>
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="Address" name="address">
+            <input type="text" class="form-control" placeholder="Address" name="address" required>
         </div>
         <div class="form-group">
-            <input type="tel" class="form-control" placeholder="Telephone No. (+1234567890123)" pattern="^\+?1?\d{9,15}$" name="telephone">
+            <input type="tel" class="form-control" placeholder="Telephone No. (+1234567890123)" pattern="^\+?1?\d{9,15}$" name="telephone" required>
        </div>
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="Bidding Settings (E.G HIGH, LOW, MEDIUM)" name="bd-settings">
+            <input type="text" class="form-control" placeholder="Bidding Settings (E.G HIGH, LOW, MEDIUM)" name="bidding_settings" required>
             <span class="error" id="bd-error"></span>
         </div>
         <div class="form-group">
@@ -46,12 +52,11 @@
             <span class="error" id="google_id_error"></span>
         </div>
     
-        <input type="submit" class="shadow" value="submit">
-        
+        <input type="submit" class="shadow" value="submit">   
     </form>
 
 {% endblock  %}
 
 {% block script %}
-    <script src="{% static 'formapp/js/index.js' %}"></script>
+    <script src="{% static 'formapp/js/form.js' %}"></script>
 {% endblock  %}

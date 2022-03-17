@@ -5,6 +5,8 @@
     <link rel="stylesheet" href= {% static 'accounts/css/auth.css' %}>
 {% endblock  %}
 
+{% block header %}{% endblock  %}
+
 {% block content %}
     <div class="signup">
         <form action="{% url 'accounts:signup' %}" method="POST">
