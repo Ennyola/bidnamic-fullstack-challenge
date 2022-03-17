@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path, include
-from formapp.views import index, show_applications, delete_application
+from form_app.views import index, show_applications, delete_application
 
 urlpatterns = [
     path("", index, name="index"),

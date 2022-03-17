@@ -10,7 +10,7 @@ GETTiNG STARTED
 - Upon navigating to the index page, while not authenticated, you will be redirected to the login page to sign in before submitting an application
 - If you do not have an account, go to the signup page using the link provided on the login page
 - A navbar is available on the index and applications page for easy navigation and logout
-- 2 applications have been created. 1 for authentication called "accounts" and the other called "formapp" which handles all form   related activites
+- 2 applications have been created. 1 for authentication called "accounts" and the other called "form_app" which handles all form   related activites
 
 TESTING
 - Tests have been written for each application and they can be found in the "tests" folder for each application.

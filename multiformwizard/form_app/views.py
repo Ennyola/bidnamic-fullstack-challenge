@@ -1,7 +1,7 @@
 from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from .models import UserApplication
+from .models import FormApplication
 
 # Create your views here.
 
@@ -22,11 +22,11 @@ def index(request):
         company_name = request.POST.get("company_name", None)
 
         #checks if the user is not submitting an existing google ID
-        if UserApplication.objects.filter(google_id=google_id).exists():
+        if FormApplication.objects.filter(google_id=google_id).exists():
             messages.error(request, "An Application with that GOOGLE ID already exists")
         #creates application
         else:
-            UserApplication.objects.create(
+            FormApplication.objects.create(
                 title=title,
                 first_name=first_name,
                 surname=surname,
@@ -39,7 +39,7 @@ def index(request):
             )
             return redirect("applications")
 
-    return render(request, "formapp/customerSubmitForm.html")
+    return render(request, "form_app/customerSubmitForm.html")
 
 
 @login_required
@@ -47,9 +47,9 @@ def show_applications(request):
     '''
     Function to fetch all applications submitted successfully
     '''
-    applications = UserApplication.objects.all()
+    applications = FormApplication.objects.all()
     context = {"applications": applications}
-    return render(request, "formapp/showApplications.html", context)
+    return render(request, "form_app/showApplications.html", context)
 
 
 @login_required
@@ -57,6 +57,6 @@ def delete_application(request, id):
     '''
     # Function to delete an application using it's id
     '''
-    application = UserApplication.objects.get(id=id)
+    application = FormApplication.objects.get(id=id)
     application.delete()
     return redirect("applications")

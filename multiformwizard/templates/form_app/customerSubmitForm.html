@@ -3,8 +3,10 @@
 
 
 {% block stylesheet %}
-    <link rel="stylesheet" href="{% static 'formapp/css/form.css' %}">
+    <link rel="stylesheet" href="{% static 'form_app/css/form.css' %}">
 {% endblock  %}
+
+{% block title %} <title>Create Application </title> {% endblock  %}
 
 {% block nav_link %}
     <a href= {% url 'applications' %}> Show Application</a>               
@@ -58,5 +60,5 @@
 {% endblock  %}
 
 {% block script %}
-    <script src="{% static 'formapp/js/form.js' %}"></script>
+    <script src="{% static 'form_app/js/form.js' %}"></script>
 {% endblock  %}

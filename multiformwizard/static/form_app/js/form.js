@@ -4,6 +4,8 @@ let form = document.querySelector("#customerForm"),
     biddingError = document.querySelector("#bd-error"),
     googleIDError = document.querySelector("#google_id_error")
 
+
+// Function gotten from https://www.coditty.com/code/javascript-18-years-validation#:~:text=How%20to%20validate%20that%20user,%2Fdd%20var%20optimizedBirthday%20%3D%20birthday.
 function underAgeValidate(birthday) {
     // it will accept two types of format yyyy-mm-dd and yyyy/mm/dd
     let optimizedBirthday = birthday.replace(/-/g, "/");

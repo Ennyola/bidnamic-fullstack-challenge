@@ -1,17 +1,18 @@
 from datetime import datetime
 from django.test import TestCase
-from ..models import UserApplication
+from ..models import FormApplication
 
 # Create your tests here.
 
 
 class TestModels(TestCase):
-    """Test for models.py in accounts app"""
+    """Test for models.py in form_app"""
+
     def test_title_returned(self):
-        """"
+        """ "
         Tests if model title is returned whenever it is queried
         """
-        application = UserApplication.objects.create(
+        application = FormApplication.objects.create(
             title="A new application",
             first_name="John",
             surname="Doe",

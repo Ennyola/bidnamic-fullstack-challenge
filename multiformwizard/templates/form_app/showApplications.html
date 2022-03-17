@@ -2,9 +2,10 @@
 {% load static %}
 
 {% block stylesheet %}
-    <link rel="stylesheet" href="{% static 'formapp/css/applications.css' %}">
-
+    <link rel="stylesheet" href="{% static 'form_app/css/applications.css' %}">
 {% endblock  %}
+
+{% block title %} <title>Applications </title> {% endblock  %}
 
 {% block nav_link %}
     <a href= {% url 'index' %}> New Application</a>               
@@ -16,10 +17,7 @@
 
     <div class="applications">
         {% if  not applications%}
-
         <h5 class="no-application">NO APPLICATION YET</h5>
-
-        
         {% else %}
             <table>
                 <thead>
@@ -47,8 +45,6 @@
                     {% endfor %}     
                 </tbody>
             </table> 
-        {% endif %}
-        
+        {% endif %}   
     </div>
-    
 {% endblock  %}

@@ -5,10 +5,11 @@
     <link rel="stylesheet" href= {% static 'accounts/css/auth.css' %}>
 {% endblock  %}
 
+{% block title %} <title>Login </title> {% endblock  %}
+
 {% block header %}{% endblock  %}
 
 {% block content %}
-    
     <div class="login">
         <form action="{% url 'accounts:login' %}" method="POST">
             <h1>Login</h1>
