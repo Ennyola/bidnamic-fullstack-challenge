@@ -51,3 +51,10 @@ form input {
     color: red;
     font-size: 15px;
 }
+
+.message-error {
+    font-weight: 600;
+    color: rgb(243, 29, 29);
+    font-size: 20px;
+    text-align: center;
+}
